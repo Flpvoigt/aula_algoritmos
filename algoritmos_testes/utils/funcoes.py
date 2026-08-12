@@ -1,4 +1,5 @@
 import requests
+import math
 
 #funcao para calcular a media ponderada e a media simples de tres notas
 def calcular_media(n1, n2, n3):
@@ -90,7 +91,7 @@ def potencia(a, b):
 
 #funcao para calcular a raiz de um valor
 def raiz(a, b):
-    raiz = pow(a, 1/b)
+    raiz = math.pow(a, 1/b)
     return raiz 
 
 #funcao para converter temperatura de Celsius para Fahrenheit 
@@ -127,3 +128,12 @@ def identificar_tipo(valor):
             return float(valor)
         except ValueError:
             return valor  # continua como str
+    
+def valor_lucro_venda(preco_compra, preco_lucro):
+    valor_lucro = preco_compra * (preco_lucro / 100)
+    preco_venda = preco_compra + valor_lucro
+    return f"O preço de venda do produto é: {preco_venda:.2f} BRL, sendo o lucro de {valor_lucro:.2f} BRL."
+
+def calcular_area_circulo(raio):
+    area = math.pi * (raio ** 2)
+    return f"A área do círculo com raio {raio} é: {area:.2f} cms²."
