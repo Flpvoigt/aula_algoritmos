@@ -1,8 +1,7 @@
-from algoritmos_testes.funcoes_sistema import funcoes
+from algoritmos_testes.utils import funcoes
 
 def main():
     while True:
-        operador = input("Digite o operador (+, -, *, /, **, sqrt): ").lower()
 
         try:
             valor_1 = float(input("Digite o primeiro valor: "))
@@ -11,9 +10,12 @@ def main():
             print("Erro: Por favor, insira apenas números válidos.")
             continue
 
+        operador = input("Digite o operador (+, -, *, /, **, sqrt): ").lower()
+
         if operador not in ['+', '-', '*', '/', '**', 'sqrt']:
             print("Erro: Operador inválido. Por favor, escolha entre +, -, *, /, ** ou sqrt.")
             continue
+        
         if operador == 'sqrt':
             resultado = funcoes.raiz(valor_1,valor_2)
             print(f"O resultado da operação {operador}({valor_1}, {valor_2}) é: {resultado}")

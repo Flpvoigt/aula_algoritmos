@@ -1,4 +1,4 @@
-from funcoes_sistema.funcoes import calcular_media
+from utils.funcoes import calcular_media
 
 def main():
     while True:

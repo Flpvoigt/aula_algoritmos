@@ -1,4 +1,4 @@
-from algoritmos_testes.funcoes_sistema import funcoes
+from algoritmos_testes.utils import funcoes
 
 def main():
     while True:

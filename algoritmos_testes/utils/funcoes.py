@@ -62,24 +62,68 @@ def converter_real_para_libra(valor_real):
     valor_libra = valor_real / cotacao_libra
     return f"O {valor_real} BRL inserido é equivalente a {valor_libra:.2f} GBP"
 
+#funcao para somar 2 valores
 def soma(a, b):
     return a + b
 
+#funcao para subtrair 2 valores
 def subtracao(a, b):
     return a - b
 
+#funcao para multiplicar 2 valores
 def multiplicacao(a, b): 
     return a * b
 
+#funcao para dividir 2 valores e retornar o quociente, inteiro e resto
 def divisao(a, b):
     if a == 0 or b == 0:
         raise ValueError("Erro: Divisão por zero não é permitida.")
-    
-    return a / b, a // b, a % b
+    else:
+        quociente = a / b
+        inteiro = a // b
+        resto = a % b
+        return f"Quociente: {quociente}, Inteiro: {inteiro}, Resto: {resto}"
 
+#funcao para calcular a potencia de um valor
 def potencia(a, b):
     return a ** b
 
+#funcao para calcular a raiz de um valor
 def raiz(a, b):
     raiz = pow(a, 1/b)
-    return raiz
+    return raiz 
+
+#funcao para converter temperatura de Celsius para Fahrenheit 
+def converte_para_fahrenheit(temperatura):
+    fahrenheit = (temperatura * 9/5) + 32
+    return f"A temperatura {temperatura}°C em Fahrenheit é: {fahrenheit:.2f} °F"
+
+#funcao para converter temperatura de Celsius para Kelvin
+def converter_para_kelvin(temperatura):
+    kelvin = temperatura + 273.15
+    return f"A temperatura {temperatura}°C em Kelvin é: {kelvin:.2f} K"
+
+def mostrar_antecessor_sucessor(numero):
+    antecessor = numero - 1
+    sucessor = numero + 1
+    return f"O antecessor de {numero} é {antecessor} e o sucessor é {sucessor}."
+
+def trocar_com_pythonico(a, b):
+    a, b = b, a
+    return f"variavel 1: ({a}), variavel 2: ({b})"
+
+def trocar_com_auxiliar(a, b):
+    auxiliar = a
+    a = b
+    b = auxiliar
+    return a, b
+
+def identificar_tipo(valor):
+    """Recebe uma string e tenta convertê-la para int, depois float, senão mantém como str."""
+    try:
+        return int(valor)
+    except ValueError:
+        try:
+            return float(valor)
+        except ValueError:
+            return valor  # continua como str
